@@ -1,0 +1,82 @@
+---
+title: "Email Verification: Why It Matters and How to Do It Right"
+excerpt: "Catch-alls, role accounts, soft vs hard bounces — everything you need to know about verifying email lists in 2026."
+category: "Email Verification"
+date: "2026-04-20"
+readTime: "8 min read"
+author: "MD. Al Amin"
+tags: ["email-verification", "deliverability", "list-hygiene"]
+---
+
+Email verification is the most boring step in cold outreach and the one that most determines whether your campaign succeeds or burns your domain.
+
+If you send to an unverified list, here's what happens: a measurable percentage of those emails are dead. Each one becomes a hard bounce. Bounces above 2% drop inbox placement. Above 5%, you get throttled. Above 10%, your domain reputation collapses inside a week.
+
+A 10,000-email send on a 70%-deliverable list isn't just an underperforming campaign — it's a domain-destroying event.
+
+## The four kinds of bad emails
+
+Verification is about catching these before they hit your queue:
+
+**Invalid / non-existent.** The mailbox simply doesn't exist. SMTP returns 550. Hard bounce, immediate damage.
+
+**Catch-all.** Domain accepts email for any local part. Looks valid to most verifiers but might still bounce or go unread. Treat as risky.
+
+**Role-based.** `info@`, `sales@`, `admin@`, etc. Usually monitored by no one, often go to a black hole inbox. Skip unless you have specific intent.
+
+**Disposable / temporary.** `mailinator.com`, `tempmail.io`. Used by people who don't want real follow-up. Skip.
+
+## How email verification works under the hood
+
+A real verification check runs four sequential steps:
+
+1. **Syntax check.** Does the address match RFC 5321 format?
+2. **DNS / MX check.** Does the domain have MX records pointing somewhere real?
+3. **SMTP handshake.** Open a connection to the mailbox provider, issue `HELO`, `MAIL FROM`, `RCPT TO`. Check the response code.
+4. **Catch-all probe.** Send `RCPT TO` for a random local part on the same domain. If accepted, the domain is a catch-all.
+
+The reliability of step 3 depends on the provider. Gmail responds honestly. Microsoft (Outlook, Office365) has been aggressively anti-verification since 2023 — they accept and silently bounce. That's why a single-vendor verification is no longer enough.
+
+## Why one verifier isn't enough in 2026
+
+Microsoft's 2023+ stance broke most single-vendor verifiers. The fix:
+
+- **Triple-check** through Reoon, Million Verifier, and NeverBounce.
+- An email that passes all three is "safe."
+- An email that passes two of three is "risky" — send if you must, with caution.
+- An email that fails two or more is "drop."
+
+For our agency clients, we triple-verify everything before delivery. The extra cost per email is a fraction of a cent. The cost of skipping it is a destroyed domain.
+
+## What to do with catch-all emails
+
+Catch-alls are the trickiest tier. Some are real (whole company shares `support@` style routing), some are dead.
+
+Our rule: ship catch-alls only when the contact has been signal-verified another way — recent LinkedIn activity, recent press mention, recent job board posting from the company. If we can confirm the person exists and is currently in role, a catch-all email has a much higher chance of being live.
+
+We label catch-alls separately in the deliverable so the outbound team can send them in their own segment.
+
+## Re-verification cadence
+
+A list's quality decays over time:
+
+- **0–30 days:** ~98% deliverable.
+- **30–90 days:** ~92% deliverable.
+- **90–180 days:** ~80% deliverable.
+- **180+ days:** ~65% deliverable, much worse if industry has high churn.
+
+If you're using a list older than 60 days, re-verify before sending. Always.
+
+## Practical workflow
+
+For every list we deliver:
+
+1. Initial verification pass through three providers.
+2. Catch-all probe + signal cross-check.
+3. Role-account flagging (separate tab).
+4. Re-verification on any contact older than 30 days.
+5. Output: clean list + risky list + dropped list (so the client sees the math).
+
+That's the standard. Anyone selling lists without that workflow is selling you a domain-destroying event in a spreadsheet.
+
+> Need a triple-verified prospect list? Get free sample leads before you order and we'll show our verification breakdown so you can see exactly what passes our filters.

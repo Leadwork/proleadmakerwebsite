@@ -1,0 +1,100 @@
+---
+title: "Email Warmup: The 30-Day Plan to Land in the Primary Inbox"
+excerpt: "Why warmup matters, the day-by-day plan, and the mistakes that destroy a domain before you've sent your first real cold email."
+category: "Email Deliverability"
+date: "2026-03-18"
+readTime: "8 min read"
+author: "MD. Al Amin"
+tags: ["warmup", "deliverability", "infrastructure"]
+---
+
+Every cold-email failure traces back to one of three causes: bad list, bad copy, or bad infrastructure. The most common — and the most preventable — is bad infrastructure, and the heart of infrastructure is warmup.
+
+This is the 30-day plan we run on every new client domain.
+
+## What warmup actually does
+
+Email warmup is the process of slowly building reputation on a new sending domain and inbox by sending small, varied, replied-to messages over weeks. The signals mailbox providers (Gmail, Outlook, Yahoo) use to decide whether you're a real sender are:
+
+- Domain age and consistency.
+- Email volume ramp (slow vs. spiky).
+- Reply rate from recipients.
+- Spam complaint rate.
+- Bounce rate.
+
+A new inbox sending 50 cold emails on day one fails on every one of those signals. A warmup tool simulates the right behavior until the inbox has a track record.
+
+## The 30-day plan
+
+### Days 1–3: Domain setup
+
+- Buy the domain. Use a respected registrar.
+- Set up MX records pointing to your email provider (Google Workspace, Outlook 365, or specialty provider like Maildoso).
+- Configure **SPF**, **DKIM**, and **DMARC** records. Verify with `mxtoolbox.com`.
+- Create 2–3 inboxes per domain.
+- Do not send anything yet.
+
+### Days 4–14: Warmup ramp
+
+- Plug each inbox into a warmup tool (Smartlead, Instantly, Mailwarm, Warmupinbox).
+- Start at 5–10 simulated emails per day per inbox.
+- Increase by 5 per inbox every 2 days until you hit 25–30 daily warmup messages.
+- Watch reply rate. It should hold at 35–50% (warmup tools simulate replies).
+- Spot-check the inbox manually every few days — make sure messages are landing in Primary, not Promotions.
+
+### Days 15–21: Light real-send
+
+- Start real cold sending at 5 emails per inbox per day, max.
+- Continue warmup at 20+ per day per inbox in parallel.
+- Use highly verified, hand-picked test prospects for the first sends — you want some real replies.
+- Watch deliverability metrics daily.
+
+### Days 22–30: Scale-up
+
+- Increase real-send by 2–3 emails per inbox per week.
+- By day 30, healthy inboxes should be doing 25–35 cold emails per day.
+- Keep warmup running at 15–20 per day per inbox indefinitely.
+
+## What kills a warmup
+
+The four most common warmup-killers:
+
+**Spiking sends.** Going from 5 to 50 cold emails per day on the same inbox. Mailbox providers detect the spike and throttle.
+
+**Skipping warmup entirely.** "I'll just start sending and see how it goes." You'll see how it goes: straight to Spam.
+
+**Using recycled domains.** A cheap "aged" domain often comes with reputation baggage. Buy new and warm it yourself.
+
+**Warmup tools but no real engagement.** Warmup tools generate fake replies. They're a starting boost, not a complete solution. You also need a few real replies in the first 30 days.
+
+## Inbox provider differences
+
+**Google Workspace** is the strictest warmup. Plan for 30 days minimum, no shortcuts. Gmail's filters are sophisticated.
+
+**Microsoft Outlook 365** is even stricter on cold senders in 2026. Some teams have switched to Google Workspace specifically because Outlook deliverability has gotten so hard.
+
+**Specialty providers** (Maildoso, Mailforge, Inboxbear) are often easier to warm because they offer pre-warmed inboxes — at a premium cost. Worth it if you're scaling fast.
+
+## How many inboxes you need
+
+The math:
+
+- One inbox can sustainably send 30–50 cold emails per day, post-warmup.
+- A 100-email-per-day cold campaign needs 2–4 inboxes.
+- A 500-per-day campaign needs 10–20 inboxes across 3–5 domains.
+
+Most teams under-provision and then wonder why their sending suddenly stops working at scale.
+
+## Ongoing warmup
+
+Warmup never fully stops. Even after 30 days, keep 15–20 warmup messages per day per inbox flowing in the background. They keep reply rates high enough to maintain reputation.
+
+Stop warmup entirely and your inbox reputation slowly decays over 60–90 days. Restart it before the next big campaign.
+
+## The shortcut that doesn't exist
+
+There is no legitimate 7-day warmup. There is no provider that can warm 50 inboxes in a week. Any service promising that is selling you a domain-destroying timeline.
+
+The boring, mechanical 30-day process is the only one that consistently works. Build it in.
+
+> Setting up cold email infrastructure from scratch? We build complete setups — domains, inboxes, DNS, warmup — and hand them over fully ready. Book a call to see what a 30-day rollout would look like for your team.
